@@ -15,7 +15,8 @@ import sys
 
 # todo function to reload hpi?
 todel = [m for m in sys.modules if m.startswith('my.')]
-for m in todel: del sys.modules[m]
+for m in todel:
+    del sys.modules[m]
 
 import my
 # todo add to doc?
@@ -30,8 +31,6 @@ from my.config import bluemaestro as BC
 # print(list(M.measurements())[:10])
 
 M.fill_influxdb()
-
-ffwf
 
 #
 from my.config import rescuetime as RC

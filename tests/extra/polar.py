@@ -48,4 +48,4 @@ def prepare(request):
     import my.polar as polar
     reload(polar)
     # TODO hmm... ok, need to document reload()
-    yield dotpolar
+    return dotpolar

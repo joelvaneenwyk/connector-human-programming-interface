@@ -33,7 +33,7 @@ def run() -> None:
 
 
     # 3. prepare some demo Hypothesis data
-    hypothesis_backups = abspath('backups/hypothesis')
+    hypothesis_backups = Path.resolve('backups/hypothesis')
     Path(hypothesis_backups).mkdir(exist_ok=True, parents=True)
     check_call([
         'curl',
@@ -43,7 +43,7 @@ def run() -> None:
     #
 
     # 4. point my.config to the Hypothesis data
-    mycfg_root = abspath('my_repo')
+    mycfg_root = Path.resolve('my_repo')
     init_file = Path(mycfg_root) / 'my/config.py'
     init_file.write_text(init_file.read_text().replace(
         '/path/to/hypothesis/data',
@@ -72,39 +72,41 @@ for page in islice(pages, 0, 8):
     **os.environ,
 })
 
-# that should result in something like this:
+"""
+that should result in something like this:
 
-# URL:   https://tacticaltech.org/
-# Title: Tactical Technology Collective
-# 1 annotations
-#
-# URL:   https://web.hypothes.is/blog/annotating-the-wild-west-of-information-flow/
-# Title: Annotating the wild west of information flow – Hypothesis
-# 1 annotations
-#
-# URL:   http://www.liberation.fr/futurs/2016/12/12/megafichier-beauvau-prie-de-revoir-sa-copie_1534720
-# Title: «Mégafichier» : Beauvau prié de revoir sa copie
-# 3 annotations
-#
-# URL:   https://www.wired.com/2016/12/7500-faceless-coders-paid-bitcoin-built-hedge-funds-brain/
-# Title: 7,500 Faceless Coders Paid in Bitcoin Built a Hedge Fund’s Brain
-# 4 annotations
-#
-# URL:   http://realscreen.com/2016/12/06/project-x-tough-among-sundance-17-doc-shorts/
-# Title: “Project X,” “Tough” among Sundance ’17 doc shorts
-# 1 annotations
-#
-# URL:   https://grehack.fr/2016/program
-# Title: GreHack | Security conference and hacking game 2016 | Grenoble
-# 1 annotations
-#
-# URL:   https://respectmynet.eu/
-# Title: [!] Respect My Net
-# 1 annotations
-#
-# URL:   https://www.youtube.com/watch?v=Xgp7BIBtPhk
-# Title: BBC Documentaries 2016: The Joy of Data [FULL BBC SCIENCE DOCUMENTARY]
-# 1 annotations
+URL:   https://tacticaltech.org/
+Title: Tactical Technology Collective
+1 annotations
+
+URL:   https://web.hypothes.is/blog/annotating-the-wild-west-of-information-flow/
+Title: Annotating the wild west of information flow - Hypothesis
+1 annotations
+
+URL:   http://www.liberation.fr/futurs/2016/12/12/megafichier-beauvau-prie-de-revoir-sa-copie_1534720
+Title: «Mégafichier»: Beauvau prié de revoir sa copie
+3 annotations
+
+URL:   https://www.wired.com/2016/12/7500-faceless-coders-paid-bitcoin-built-hedge-funds-brain/
+Title: 7,500 Faceless Coders Paid in Bitcoin Built a Hedge Fund's Brain
+4 annotations
+
+URL:   http://realscreen.com/2016/12/06/project-x-tough-among-sundance-17-doc-shorts/
+Title: “Project X,” “Tough” among Sundance '17 doc shorts
+1 annotations
+
+URL:   https://grehack.fr/2016/program
+Title: GreHack | Security conference and hacking game 2016 | Grenoble
+1 annotations
+
+URL:   https://respectmynet.eu/
+Title: [!] Respect My Net
+1 annotations
+
+URL:   https://www.youtube.com/watch?v=Xgp7BIBtPhk
+Title: BBC Documentaries 2016: The Joy of Data [FULL BBC SCIENCE DOCUMENTARY]
+1 annotations
+"""
 
 from contextlib import contextmanager
 @contextmanager
