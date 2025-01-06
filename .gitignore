@@ -165,3 +165,7 @@ dmypy.json
 
 cov/
 *.png
+
+/.git/
+
+.venv/
