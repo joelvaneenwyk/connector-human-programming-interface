@@ -22,6 +22,7 @@ dependencies = [
     "cachew>=0.18.20241020",
     "ijson>=3.3.0",
     "uv>=0.5.14",
+    "pdfannots",
 ]
 
 [project.urls]
@@ -80,6 +81,7 @@ universal = true
 
 [tool.uv.sources]
 hypexport = { git = "https://github.com/karlicoss/hypexport" }
+pdfannots = { git = "https://github.com/0xabu/pdfannots" }
 
 [dependency-groups]
 dev = [
