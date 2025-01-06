@@ -10,11 +10,11 @@ import warnings
 from collections.abc import Hashable, Iterable, Iterator, Sized
 from typing import (
     TYPE_CHECKING,
-    Callable,
     TypeVar,
     Union,
     cast,
 )
+from collections.abc import Callable
 
 import more_itertools
 from decorator import decorator

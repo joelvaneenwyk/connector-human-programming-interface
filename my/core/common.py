@@ -6,11 +6,11 @@ from glob import glob as do_glob
 from pathlib import Path
 from typing import (
     TYPE_CHECKING,
-    Callable,
     Generic,
     TypeVar,
     Union,
 )
+from collections.abc import Callable
 
 from . import compat, warnings
 

@@ -13,10 +13,10 @@ from pprint import pformat
 from typing import (
     TYPE_CHECKING,
     Any,
-    Callable,
     Literal,
     TypeVar,
 )
+from collections.abc import Callable
 
 from decorator import decorator
 

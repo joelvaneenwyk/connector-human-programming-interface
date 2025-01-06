@@ -14,7 +14,8 @@ from contextlib import ExitStack
 from itertools import chain
 from pathlib import Path
 from subprocess import PIPE, CompletedProcess, Popen, check_call, run
-from typing import Any, Callable
+from typing import Any
+from collections.abc import Callable
 
 import click
 
@@ -393,7 +394,9 @@ def module_install(*, user: bool, module: Sequence[str], parallel: bool = False,
 
     use_uv = 'HPI_MODULE_INSTALL_USE_UV' in os.environ
     pre_cmd = [
-        sys.executable, '-m', *(['uv'] if use_uv else []), 'pip',
+        sys.executable, '-m',
+        *(['uv'] if use_uv else []),
+        'pip',
         'install',
         *(['--user'] if user else []), # todo maybe instead, forward all the remaining args to pip?
         *(['--break-system-packages'] if break_system_packages else []), # https://peps.python.org/pep-0668/

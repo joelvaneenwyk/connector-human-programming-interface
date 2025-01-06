@@ -10,7 +10,8 @@ from collections.abc import Iterator
 from contextlib import contextmanager
 from pathlib import Path
 from tempfile import TemporaryDirectory
-from typing import Any, Callable, Literal, Union, overload
+from typing import Any, Literal, Union, overload
+from collections.abc import Callable
 
 from .common import PathIsh
 from .compat import assert_never

@@ -52,7 +52,8 @@ def stats() -> Stats:
 ## TODO hmm. not sure if all this really belongs here?... perhaps orger?
 
 
-from typing import Callable, Union
+from typing import Union
+from collections.abc import Callable
 
 # TODO maybe type over T?
 _Predicate = Callable[[str], bool]

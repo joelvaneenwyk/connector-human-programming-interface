@@ -5,7 +5,8 @@ import re
 import sys
 from collections.abc import Iterator
 from contextlib import ExitStack, contextmanager
-from typing import Any, Callable, TypeVar
+from typing import Any, TypeVar
+from collections.abc import Callable
 
 Attrs = dict[str, Any]
 

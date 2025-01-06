@@ -40,47 +40,12 @@ if not TYPE_CHECKING:
 ##
 
 
-if sys.version_info[:2] >= (3, 10):
-    from typing import ParamSpec
-else:
-    from typing_extensions import ParamSpec
+from typing import ParamSpec
 
 
 # bisect_left doesn't have a 'key' parameter (which we use)
 # till python3.10
-if sys.version_info[:2] <= (3, 9):
-    from typing import Any, Callable, List, Optional, TypeVar  # noqa: UP035
-
-    X = TypeVar('X')
-
-    # copied from python src
-    # fmt: off
-    def bisect_left(a: list[Any], x: Any, lo: int=0, hi: int | None=None, *, key: Callable[..., Any] | None=None) -> int:
-        if lo < 0:
-            raise ValueError('lo must be non-negative')
-        if hi is None:
-            hi = len(a)
-        # Note, the comparison uses "<" to match the
-        # __lt__() logic in list.sort() and in heapq.
-        if key is None:
-            while lo < hi:
-                mid = (lo + hi) // 2
-                if a[mid] < x:
-                    lo = mid + 1
-                else:
-                    hi = mid
-        else:
-            while lo < hi:
-                mid = (lo + hi) // 2
-                if key(a[mid]) < x:
-                    lo = mid + 1
-                else:
-                    hi = mid
-        return lo
-    # fmt: on
-
-else:
-    from bisect import bisect_left
+from bisect import bisect_left
 
 
 from datetime import datetime
@@ -125,12 +90,8 @@ def test_fromisoformat() -> None:
     # )
 
 
-if sys.version_info[:2] >= (3, 10):
-    from types import NoneType
-    from typing import TypeAlias
-else:
-    NoneType = type(None)
-    from typing_extensions import TypeAlias
+from types import NoneType
+from typing import TypeAlias
 
 
 if sys.version_info[:2] >= (3, 11):

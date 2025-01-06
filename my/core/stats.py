@@ -15,10 +15,10 @@ from pathlib import Path
 from types import ModuleType
 from typing import (
     Any,
-    Callable,
     Protocol,
     cast,
 )
+from collections.abc import Callable
 
 from .types import asdict
 

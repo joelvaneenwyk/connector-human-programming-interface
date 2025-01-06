@@ -1,5 +1,6 @@
 from datetime import datetime
-from typing import Callable, Literal, cast
+from typing import Literal, cast
+from collections.abc import Callable
 
 from my.core import datetime_aware
 

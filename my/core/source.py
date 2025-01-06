@@ -8,7 +8,8 @@ from __future__ import annotations
 import warnings
 from collections.abc import Iterable, Iterator
 from functools import wraps
-from typing import Any, Callable, TypeVar
+from typing import Any, TypeVar
+from collections.abc import Callable
 
 from .warnings import medium
 

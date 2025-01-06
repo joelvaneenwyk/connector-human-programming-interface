@@ -3,7 +3,8 @@ from __future__ import annotations
 from collections.abc import Iterator, Sequence
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
-from typing import Callable, Union
+from typing import Union
+from collections.abc import Callable
 
 from ..common import Location, LocationProtocol
 

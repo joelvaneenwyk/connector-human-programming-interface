@@ -14,7 +14,8 @@ import time
 from collections.abc import Iterator
 from datetime import date, datetime, timedelta
 from functools import cache
-from typing import Any, Callable, NamedTuple
+from typing import Any, NamedTuple
+from collections.abc import Callable
 
 import more_itertools
 

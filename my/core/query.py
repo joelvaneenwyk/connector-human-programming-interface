@@ -15,11 +15,11 @@ from collections.abc import Iterable, Iterator
 from datetime import datetime
 from typing import (
     Any,
-    Callable,
     NamedTuple,
     Optional,
     TypeVar,
 )
+from collections.abc import Callable
 
 import more_itertools
 

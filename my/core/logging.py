@@ -9,7 +9,7 @@ from typing import TYPE_CHECKING, Union
 
 
 def test() -> None:
-    from typing import Callable
+    from collections.abc import Callable
 
     M: Callable[[str], None] = lambda s: print(s, file=sys.stderr)
 

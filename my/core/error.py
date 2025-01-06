@@ -11,12 +11,12 @@ from datetime import datetime
 from itertools import tee
 from typing import (
     Any,
-    Callable,
     Literal,
     TypeVar,
     Union,
     cast,
 )
+from collections.abc import Callable
 
 from .types import Json
 

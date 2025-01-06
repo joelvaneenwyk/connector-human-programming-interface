@@ -12,7 +12,8 @@ from datetime import datetime
 from enum import Enum
 from html.parser import HTMLParser
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any
+from collections.abc import Callable
 from urllib.parse import unquote
 
 import pytz

@@ -12,12 +12,12 @@ from pathlib import Path
 from typing import (
     TYPE_CHECKING,
     Any,
-    Callable,
     TypeVar,
     Union,
     cast,
     overload,
 )
+from collections.abc import Callable
 
 import appdirs  # type: ignore[import-untyped]
 
@@ -128,10 +128,7 @@ def _mcachew_impl(cache_path=_cache_path_dflt, **kwargs):
 
 if TYPE_CHECKING:
     R = TypeVar('R')
-    if sys.version_info[:2] >= (3, 10):
-        from typing import ParamSpec
-    else:
-        from typing_extensions import ParamSpec
+    from typing import ParamSpec
     P = ParamSpec('P')
     CC = Callable[P, R]  # need to give it a name, if inlined into bound=, mypy runs in a bug
     PathProvider = Union[PathIsh, Callable[P, PathIsh]]
