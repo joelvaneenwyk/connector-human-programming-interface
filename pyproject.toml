@@ -19,6 +19,10 @@ dependencies = [
     "typing-extensions>=4.12.2",
 ]
 
+[project.urls]
+homepage = "https://github.com/karlicoss/HPI"
+repository = "https://github.com/karlicoss/HPI"
+
 [project.scripts]
 hpi = "my.core.__main__:main"
 
@@ -90,11 +94,24 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = ["my"]
+zip-safe = false
+
+[tool.setuptools.package-data]
+"my" = ["py.typed"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["my.*"]
+
+[tool.setuptools_scm]
+# todo eh? not sure if I should just rely on proper tag naming and use use_scm_version=True
+# 'version_scheme': 'python-simplified-semver',
+local_scheme = "dirty-tag"
 
 [tool.uv]
 managed = true
 package = true
+link-mode = "copy"
 
 [tool.uv.pip]
 universal = true
