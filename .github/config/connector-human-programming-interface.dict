@@ -14,10 +14,12 @@ Beauvau
 beepb
 bluemaestro
 Bojan
+browserexport
 cachetools
 cachew
 calmap
 celerybeat
+cffi
 chardet
 checkins
 cmdclass
@@ -44,13 +46,16 @@ Eliezer
 elif
 elpa
 emfit
+emfitexport
 emscripten
+endoexport
 endomondo
 envlist
 envpython
 eshell
 exceptiongroup
 fbmessenger
+fbmessengerexport
 Feedbin
 Feedly
 figsize
@@ -64,7 +69,9 @@ FURB
 Gerasimov
 gettattr
 ghexport
+gitpython
 goodreads
+goodrexport
 gpslogger
 gpxpy
 hackernews
@@ -78,6 +85,8 @@ ilen
 iniconfig
 inplace
 instapaper
+instapexport
+ipgeocache
 ipython
 isisntance
 isnt
@@ -87,6 +96,7 @@ itertools
 journaling
 karlicoss
 keypress
+kobuddy
 Koester
 kompress
 lastdir
@@ -111,6 +121,7 @@ Noether
 noqa
 nosetests
 numpy
+openpyxl
 orger
 orgmode
 orgparse
@@ -123,10 +134,12 @@ pathlib
 pdfannots
 pdfs
 pexpect
+pinbexport
 pinboard
 Pipfile
 platformdirs
 pluggy
+pockexport
 polardocs
 posargs
 pprints
@@ -143,6 +156,7 @@ pyfzf
 pygments
 pylint
 pypa
+pypath
 pypi
 pyplot
 pytestmark
@@ -151,6 +165,7 @@ pytz
 pyupgrade
 quantifiedself
 reftex
+rescueexport
 rescuetime
 rexport
 roamresearch
@@ -186,9 +201,11 @@ subenvironment
 subpackages
 subreddits
 Sundance
+tcxparser
 tdir
 termgraph
 testdata
+timezonefinder
 todel
 tomli
 tomlkit
