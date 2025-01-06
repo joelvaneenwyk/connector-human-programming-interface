@@ -1,5 +1,6 @@
 [project]
-name = "connector-human-programming-interface"
+# NOTE: 'my' is taken for PyPi already, and makes discovering the project impossible. so we're using HPI
+name = "HPI"
 version = "0.1.0"
 description = "A Python interface to my life"
 authors = [{ name = "Dmitrii Gerasimov", email = "karlicoss@gmail.com" }]
@@ -20,6 +21,31 @@ dependencies = [
 
 [project.scripts]
 hpi = "my.core.__main__:main"
+
+[project.optional-dependencies]
+testing = [
+    "pytest",
+    "ruff",
+    "mypy",
+    "lxml",  # for mypy coverage
+    "pandas",  # used in some tests.. although shouldn't rely on it
+    "orjson",  # for my.core.serialize and denylist
+    "simplejson",  # for my.core.serialize
+    "types-pytz",  # for my.core
+    "types-decorator",  # for my.core.compat
+    "pandas-stubs",  # for my.core.pandas
+    "types-dateparser",  # for my.core.query_range
+    "types-simplejson",  # for my.core.serialize
+]
+
+optional = [
+    "orjson",  # for my.core.serialize
+    "pyfzf_iter",  # for my.core.denylist
+    "cachew>=0.15.20231019",
+    "mypy",  # used for config checks
+    "colorlog",  # for colored logs
+    "enlighten",  # for CLI progress bars
+]
 
 [dependency-groups]
 dev = [
@@ -47,6 +73,31 @@ dev = [
     "types-simplejson>=3.19.0.20241221",
     "wheel>=0.45.1",
 ]
+
+[build-system]
+requires = [
+    "appdirs",                # very common, and makes it portable
+    "click>=8.1",             # for the CLI, printing colors, decorator-based - may allow extensions to CLI
+    "decorator",              # less pain in writing correct decorators. very mature and stable, so worth keeping in core
+    "kompress>=0.2.20240918", # for transparent access to compressed files via pathlib.Path
+    "more-itertools",         # it's just too useful and very common anyway
+    "pytz",                   # even though it's not needed by the core, it"s so common anyway...
+    "setuptools_scm",
+    "setuptools>=42",
+    "typing-extensions",      # one of the most common pypi packages, ok to depend for core
+    "wheel",
+]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["my"]
+
+[tool.uv]
+managed = true
+package = true
+
+[tool.uv.pip]
+universal = true
 
 [tool.mypy]
 pretty = true
