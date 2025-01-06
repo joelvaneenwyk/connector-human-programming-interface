@@ -1,9 +1,10 @@
 [project]
 name = "connector-human-programming-interface"
 version = "0.1.0"
-description = "Add your description here"
+description = "A Python interface to my life"
+authors = [{name = "Dmitrii Gerasimov", email = "karlicoss@gmail.com"}]
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.9"
 dependencies = [
     "appdirs>=1.4.4",
     "click>=8.1.8",
@@ -14,14 +15,31 @@ dependencies = [
     "typing-extensions>=4.12.2",
 ]
 
+[project.scripts]
+hpi = "my.core.__main__:main"
+
 [dependency-groups]
 dev = [
+    "argparse>=1.4.0",
     "build>=1.2.2.post1",
+    "cachew>=0.18.20241020",
+    "colorlog>=6.9.0",
+    "enlighten>=1.13.0",
+    "lxml>=5.3.0",
     "mypy>=1.14.1",
+    "orjson>=3.10.13",
+    "pandas>=2.2.3",
+    "pandas-stubs>=2.2.2.240807",
+    "pyfzf-iter>=0.0.1",
     "pylint>=3.3.3",
     "pytest>=8.3.4",
     "ruff>=0.8.6",
     "setuptools>=75.7.0",
+    "simplejson>=3.19.3",
     "tox>=4.23.2",
+    "types-dateparser>=1.2.0.20240420",
+    "types-decorator>=5.1.8.20240310",
+    "types-pytz>=2024.2.0.20241221",
+    "types-simplejson>=3.19.0.20241221",
     "wheel>=0.45.1",
 ]
