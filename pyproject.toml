@@ -25,20 +25,6 @@ dependencies = [
     "pdfannots",
     "browserexport>=0.4.3",
     "cffi>=1.17.1",
-    "emfitexport",
-    "endoexport",
-    "fbmessengerexport",
-    "ghexport",
-    "goodrexport",
-    "hypexport",
-    "instapexport",
-    "monzoexport",
-    "pinbexport",
-    "pockexport",
-    "rescueexport",
-    "rexport",
-    "stexport",
-    "ipgeocache",
     "pushshift-comment-export",
     "gitpython>=3.1.44",
     "kobuddy>=0.4.20241020",
@@ -46,6 +32,7 @@ dependencies = [
     "protobuf>=5.29.2",
     "python-tcxparser>=2.3.0",
     "timezonefinder>=6.5.7",
+    "cryptography==44.0.0",
 ]
 
 [project.urls]
@@ -180,7 +167,22 @@ optional = [
     "colorlog",              # for colored logs
     "enlighten",             # for CLI progress bars
 ]
-
+external = [
+    "emfitexport",
+    "endoexport",
+    "fbmessengerexport",
+    "ghexport",
+    "goodrexport",
+    "hypexport",
+    "instapexport",
+    "monzoexport",
+    "pinbexport",
+    "pockexport",
+    "rescueexport",
+    "rexport",
+    "stexport",
+    "ipgeocache",
+]
 [tool.mypy]
 pretty = true
 show_error_context = true
