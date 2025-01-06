@@ -4,7 +4,11 @@ name = "HPI"
 version = "0.1.0"
 description = "A Python interface to my life"
 authors = [{ name = "Dmitrii Gerasimov", email = "karlicoss@gmail.com" }]
-requires-python = ">=3.9"
+
+# Locking to after 3.10 because of typing-extensions and ability to use union as
+# type hint using | operator.
+requires-python = ">=3.10"
+
 dependencies = [
     "appdirs>=1.4.4",
     "click>=8.1.8",
