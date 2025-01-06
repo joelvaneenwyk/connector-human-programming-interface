@@ -117,8 +117,9 @@ docs/_build/
 # PyBuilder
 target/
 
-# pyenv
-.python-version
+# We want to submit this to version control to make it clear what the primary
+# development and target version is even if we are targetting other versions.
+# .python-version
 
 # pipenv
 #   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
