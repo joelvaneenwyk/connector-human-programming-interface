@@ -4,18 +4,24 @@ name = "HPI"
 version = "0.1.0"
 description = "A Python interface to my life"
 authors = [{ name = "Dmitrii Gerasimov", email = "karlicoss@gmail.com" }]
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 dependencies = [
     "appdirs>=1.4.4",
     "click>=8.1.8",
     "decorator>=5.1.1",
     "google-takeout-parser>=0.1.12",
+    "gpxpy>=1.6.2",
     "kompress>=0.2.20240918",
     "lxml>=5.3.0",
     "more-itertools>=10.5.0",
     "orgparse>=0.4.20231004",
     "pytz>=2024.2",
     "typing-extensions>=4.12.2",
+    "orgparse", # for core.orgmode
+    "gpxpy", # for hpi query --output gpx
+    "cachew>=0.18.20241020",
+    "ijson>=3.3.0",
+    "uv>=0.5.14",
 ]
 
 [project.urls]
@@ -37,7 +43,7 @@ requires = [
     "setuptools>=42",
     "typing-extensions",      # one of the most common pypi packages, ok to depend for core
     "wheel",
-    "orgparse"
+    "orgparse",
 ]
 build-backend = "setuptools.build_meta"
 
@@ -83,6 +89,7 @@ dev = [
     "colorlog>=6.9.0",
     "enlighten>=1.13.0",
     "hypexport",
+    "isort>=5.13.2",
     "lxml>=5.3.0",
     "lxml-stubs>=0.5.1",
     "mypy>=1.14.1",
@@ -99,6 +106,8 @@ dev = [
     "tox-uv>=1.17.0",
     "types-dateparser>=1.2.0.20240420",
     "types-decorator>=5.1.8.20240310",
+    "types-pillow>=10.2.0.20240822",
+    "types-protobuf>=5.29.1.20241207",
     "types-pytz>=2024.2.0.20241221",
     "types-simplejson>=3.19.0.20241221",
     "wheel>=0.45.1",
@@ -202,6 +211,10 @@ select = [
 ignore = [
     "D", # annoying nags about docstrings
     "N", # pep naming
+
+    "UP007",
+    "B905",
+
     # "TCH",   # type checking rules, mostly just suggests moving imports under TYPE_CHECKING
     "S",   # bandit (security checks) -- tends to be not very useful, lots of nitpicks
     "DTZ", # datetimes checks -- complaining about missing tz and mostly false positives
