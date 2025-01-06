@@ -1,0 +1,16 @@
+appdirs
+cachetools
+chardet
+colorama
+distlib
+exceptiongroup
+filelock
+iniconfig
+itertools
+kompress
+platformdirs
+pluggy
+pytz
+sdist
+tomli
+virtualenv

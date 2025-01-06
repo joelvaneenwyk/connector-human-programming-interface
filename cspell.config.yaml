@@ -1,0 +1,11 @@
+version: "0.2"
+ignorePaths: []
+dictionaryDefinitions:
+    - name: connector-human-programming-interface
+      path: ./.github/config/connector-human-programming-interface.dict
+      addWords: true
+dictionaries:
+    - connector-human-programming-interface
+words: []
+ignoreWords: []
+import: []
