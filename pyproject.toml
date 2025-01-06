@@ -4,7 +4,6 @@ name = "HPI"
 version = "0.1.0"
 description = "A Python interface to my life"
 authors = [{ name = "Dmitrii Gerasimov", email = "karlicoss@gmail.com" }]
-readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
     "appdirs>=1.4.4",
@@ -38,11 +37,19 @@ requires = [
     "setuptools>=42",
     "typing-extensions",      # one of the most common pypi packages, ok to depend for core
     "wheel",
+    "orgparse"
 ]
 build-backend = "setuptools.build_meta"
 
+[project.readme]
+file = "README.org"
+content-type = "text/markdown"
+
 [tool.setuptools]
 zip-safe = false
+py-modules = ["demo"]
+license-files = ["LICENSE"]
+include-package-data = true
 
 [tool.setuptools.package-data]
 "my" = ["py.typed"]
