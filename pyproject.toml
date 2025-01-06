@@ -142,9 +142,16 @@ exclude = "doc/overlays/|misc/|my/"
 module = "my.config.repos.pdfannots.pdfannots"
 ignore_errors = true
 
-[tool.ruff]
-target-version = "py39" # NOTE: inferred from pyproject.toml if present
+[tool.pytest.ini_options]
+python_files = "*.py"
+addopts = [
+    "-rap",
+    "--verbose",
+    "--continue-on-collection-errors",
+    "--durations=0",
+]
 
+[tool.ruff]
 select = [
     "F", # flakes rules -- default, but extend just in case
     "E", # pycodestyle  -- default, but extend just in case
@@ -176,8 +183,6 @@ select = [
     "ARG",  # unused argument checks
     # "A",   # builtin shadowing -- TODO handle later
     # "EM",  # TODO hmm could be helpful to prevent duplicate err msg in traceback.. but kinda annoying
-
-    # "ALL", # uncomment this to check for new rules!
 ]
 
 # Preserve types, even if a file imports `from __future__ import annotations`
