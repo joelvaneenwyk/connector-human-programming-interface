@@ -2,15 +2,18 @@
 name = "connector-human-programming-interface"
 version = "0.1.0"
 description = "A Python interface to my life"
-authors = [{name = "Dmitrii Gerasimov", email = "karlicoss@gmail.com"}]
+authors = [{ name = "Dmitrii Gerasimov", email = "karlicoss@gmail.com" }]
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
     "appdirs>=1.4.4",
     "click>=8.1.8",
     "decorator>=5.1.1",
+    "google-takeout-parser>=0.1.12",
     "kompress>=0.2.20240918",
+    "lxml>=5.3.0",
     "more-itertools>=10.5.0",
+    "orgparse>=0.4.20231004",
     "pytz>=2024.2",
     "typing-extensions>=4.12.2",
 ]
@@ -26,6 +29,7 @@ dev = [
     "colorlog>=6.9.0",
     "enlighten>=1.13.0",
     "lxml>=5.3.0",
+    "lxml-stubs>=0.5.1",
     "mypy>=1.14.1",
     "orjson>=3.10.13",
     "pandas>=2.2.3",
@@ -43,3 +47,25 @@ dev = [
     "types-simplejson>=3.19.0.20241221",
     "wheel>=0.45.1",
 ]
+
+[tool.mypy]
+pretty = true
+show_error_context = true
+show_column_numbers = true
+# show_error_end = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+check_untyped_defs = true
+strict_equality = true
+enable_error_code = ["possibly-undefined"]
+
+# todo ok, maybe it wasn't such a good idea..
+# mainly because then tox picks it up and running against the user config, not the repository config
+# mypy_path=~/.config/my
+
+exclude = "doc/overlays/|misc/|my/"
+
+# it's not controlled by me, so for now just ignore..
+[[tool.mypy.overrides]]
+module = "my.config.repos.pdfannots.pdfannots"
+ignore_errors = true
