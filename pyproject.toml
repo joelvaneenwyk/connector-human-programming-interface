@@ -33,6 +33,7 @@ dependencies = [
     "python-tcxparser>=2.3",
     "timezonefinder>=6.5",
     "cryptography>=44.0",
+    "logzero>=1.7.0",
 ]
 
 [project.urls]
@@ -158,12 +159,12 @@ testing = [
     "types-simplejson", # for my.core.serialize
 ]
 optional = [
-    "orjson",                # for my.core.serialize
-    "pyfzf_iter",            # for my.core.denylist
+    "orjson",       # for my.core.serialize
+    "pyfzf_iter",   # for my.core.denylist
     "cachew>=0.18",
-    "mypy",                  # used for config checks
-    "colorlog",              # for colored logs
-    "enlighten",             # for CLI progress bars
+    "mypy",         # used for config checks
+    "colorlog",     # for colored logs
+    "enlighten",    # for CLI progress bars
 ]
 external = [
     "emfitexport",
