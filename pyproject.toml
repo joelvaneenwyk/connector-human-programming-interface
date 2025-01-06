@@ -23,6 +23,29 @@ dependencies = [
     "ijson>=3.3.0",
     "uv>=0.5.14",
     "pdfannots",
+    "browserexport>=0.4.3",
+    "cffi>=1.17.1",
+    "emfitexport",
+    "endoexport",
+    "fbmessengerexport",
+    "ghexport",
+    "goodrexport",
+    "hypexport",
+    "instapexport",
+    "monzoexport",
+    "pinbexport",
+    "pockexport",
+    "rescueexport",
+    "rexport",
+    "stexport",
+    "ipgeocache",
+    "pushshift-comment-export",
+    "gitpython>=3.1.44",
+    "kobuddy>=0.4.20241020",
+    "orjson>=3.10.13",
+    "protobuf>=5.29.2",
+    "python-tcxparser>=2.3.0",
+    "timezonefinder>=6.5.7",
 ]
 
 [project.urls]
@@ -80,8 +103,23 @@ link-mode = "copy"
 universal = true
 
 [tool.uv.sources]
-hypexport = { git = "https://github.com/karlicoss/hypexport" }
 pdfannots = { git = "https://github.com/0xabu/pdfannots" }
+emfitexport = { git = "https://github.com/karlicoss/emfitexport" }
+endoexport = { git = "https://github.com/karlicoss/endoexport" }
+fbmessengerexport = { git = "https://github.com/karlicoss/fbmessengerexport" }
+ghexport = { git = "https://github.com/karlicoss/ghexport" }
+goodrexport = { git = "https://github.com/karlicoss/goodrexport" }
+hypexport = { git = "https://github.com/karlicoss/hypexport" }
+instapexport = { git = "https://github.com/karlicoss/instapexport" }
+monzoexport = { git = "https://github.com/karlicoss/monzoexport" }
+pinbexport = { git = "https://github.com/karlicoss/pinbexport" }
+pockexport = { git = "https://github.com/karlicoss/pockexport" }
+rescueexport = { git = "https://github.com/karlicoss/rescuexport" }
+rexport = { git = "https://github.com/karlicoss/rexport" }
+stexport = { git = "https://github.com/karlicoss/stexport" }
+google-takeout-parser = { git = "https://github.com/purarue/google_takeout_parser" }
+ipgeocache = { git = "https://github.com/purarue/ipgeocache" }
+pushshift-comment-export = { git = "https://github.com/purarue/pushshift_comment_export" }
 
 [dependency-groups]
 dev = [
