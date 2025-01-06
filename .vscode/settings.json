@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.py": "python",
+        "with_my": "python",
+        "misc/check_legacy_init_py.py": "python"
+    }
+}
