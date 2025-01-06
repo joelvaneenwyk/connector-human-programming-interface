@@ -26,58 +26,6 @@ repository = "https://github.com/karlicoss/HPI"
 [project.scripts]
 hpi = "my.core.__main__:main"
 
-[project.optional-dependencies]
-testing = [
-    "pytest",
-    "ruff",
-    "mypy",
-    "lxml",  # for mypy coverage
-    "pandas",  # used in some tests.. although shouldn't rely on it
-    "orjson",  # for my.core.serialize and denylist
-    "simplejson",  # for my.core.serialize
-    "types-pytz",  # for my.core
-    "types-decorator",  # for my.core.compat
-    "pandas-stubs",  # for my.core.pandas
-    "types-dateparser",  # for my.core.query_range
-    "types-simplejson",  # for my.core.serialize
-]
-
-optional = [
-    "orjson",  # for my.core.serialize
-    "pyfzf_iter",  # for my.core.denylist
-    "cachew>=0.15.20231019",
-    "mypy",  # used for config checks
-    "colorlog",  # for colored logs
-    "enlighten",  # for CLI progress bars
-]
-
-[dependency-groups]
-dev = [
-    "argparse>=1.4.0",
-    "build>=1.2.2.post1",
-    "cachew>=0.18.20241020",
-    "colorlog>=6.9.0",
-    "enlighten>=1.13.0",
-    "lxml>=5.3.0",
-    "lxml-stubs>=0.5.1",
-    "mypy>=1.14.1",
-    "orjson>=3.10.13",
-    "pandas>=2.2.3",
-    "pandas-stubs>=2.2.2.240807",
-    "pyfzf-iter>=0.0.1",
-    "pylint>=3.3.3",
-    "pytest>=8.3.4",
-    "ruff>=0.8.6",
-    "setuptools>=75.7.0",
-    "simplejson>=3.19.3",
-    "tox>=4.23.2",
-    "types-dateparser>=1.2.0.20240420",
-    "types-decorator>=5.1.8.20240310",
-    "types-pytz>=2024.2.0.20241221",
-    "types-simplejson>=3.19.0.20241221",
-    "wheel>=0.45.1",
-]
-
 [build-system]
 requires = [
     "appdirs",                # very common, and makes it portable
@@ -104,9 +52,10 @@ where = ["."]
 include = ["my.*"]
 
 [tool.setuptools_scm]
-# todo eh? not sure if I should just rely on proper tag naming and use use_scm_version=True
-# 'version_scheme': 'python-simplified-semver',
 local_scheme = "dirty-tag"
+
+# todo eh? not sure if I should just rely on proper tag naming and use use_scm_version=True
+#version_scheme = "python-simplified-semver"
 
 [tool.uv]
 managed = true
@@ -115,6 +64,57 @@ link-mode = "copy"
 
 [tool.uv.pip]
 universal = true
+
+[dependency-groups]
+dev = [
+    "argparse>=1.4.0",
+    "build>=1.2.2.post1",
+    "cachew>=0.18.20241020",
+    "colorlog>=6.9.0",
+    "enlighten>=1.13.0",
+    "lxml>=5.3.0",
+    "lxml-stubs>=0.5.1",
+    "mypy>=1.14.1",
+    "orjson>=3.10.13",
+    "pandas>=2.2",
+    "pandas-stubs>=2.2",
+    "pyfzf-iter>=0.0.1",
+    "pylint>=3.3.3",
+    "pytest>=8.3.4",
+    "ruff>=0.8.6",
+    "setuptools>=75.7.0",
+    "simplejson>=3.19.3",
+    "tox>=4.23.2",
+    "tox-uv>=1.17.0",
+    "types-dateparser>=1.2.0.20240420",
+    "types-decorator>=5.1.8.20240310",
+    "types-pytz>=2024.2.0.20241221",
+    "types-simplejson>=3.19.0.20241221",
+    "wheel>=0.45.1",
+]
+[project.optional-dependencies]
+testing = [
+    "pytest",
+    "ruff",
+    "mypy",
+    "lxml",             # for mypy coverage
+    "pandas",           # used in some tests.. although shouldn't rely on it
+    "orjson",           # for my.core.serialize and denylist
+    "simplejson",       # for my.core.serialize
+    "types-pytz",       # for my.core
+    "types-decorator",  # for my.core.compat
+    "pandas-stubs",     # for my.core.pandas
+    "types-dateparser", # for my.core.query_range
+    "types-simplejson", # for my.core.serialize
+]
+optional = [
+    "orjson",                # for my.core.serialize
+    "pyfzf_iter",            # for my.core.denylist
+    "cachew>=0.15.20231019",
+    "mypy",                  # used for config checks
+    "colorlog",              # for colored logs
+    "enlighten",             # for CLI progress bars
+]
 
 [tool.mypy]
 pretty = true
