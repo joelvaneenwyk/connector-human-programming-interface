@@ -4,35 +4,35 @@ name = "HPI"
 version = "0.1.0"
 description = "A Python interface to my life"
 authors = [{ name = "Dmitrii Gerasimov", email = "karlicoss@gmail.com" }]
-requires-python = ">=3.10"
+requires-python = ">=3.9"
 dependencies = [
     "appdirs>=1.4.4",
     "click>=8.1.8",
     "decorator>=5.1.1",
-    "google-takeout-parser>=0.1.12",
+    "google-takeout-parser>=0.1",
     "gpxpy>=1.6.2",
-    "kompress>=0.2.20240918",
+    "kompress>=0.2",
     "lxml>=5.3.0",
     "more-itertools>=10.5.0",
-    "orgparse>=0.4.20231004",
+    "orgparse>=0.4",
     "pytz>=2024.2",
     "typing-extensions>=4.12.2",
-    "orgparse", # for core.orgmode
-    "gpxpy", # for hpi query --output gpx
-    "cachew>=0.18.20241020",
+    "orgparse>=0.4",                 # for core.orgmode
+    "gpxpy>=1.6",                    # for hpi query --output gpx
+    "cachew>=0.18",
     "ijson>=3.3.0",
     "uv>=0.5.14",
-    "pdfannots",
-    "browserexport>=0.4.3",
-    "cffi>=1.17.1",
-    "pushshift-comment-export",
-    "gitpython>=3.1.44",
-    "kobuddy>=0.4.20241020",
-    "orjson>=3.10.13",
-    "protobuf>=5.29.2",
-    "python-tcxparser>=2.3.0",
-    "timezonefinder>=6.5.7",
-    "cryptography==44.0.0",
+    "pdfannots>=0.4",
+    "browserexport>=0.4",
+    "cffi>=1.17",
+    "pushshift-comment-export>=0.1",
+    "gitpython>=3.1",
+    "kobuddy>=0.4",
+    "orjson>=3.10",
+    "protobuf>=5.29",
+    "python-tcxparser>=2.3",
+    "timezonefinder>=6.5",
+    "cryptography>=44.0",
 ]
 
 [project.urls]
@@ -44,15 +44,15 @@ hpi = "my.core.__main__:main"
 
 [build-system]
 requires = [
-    "appdirs",                # very common, and makes it portable
-    "click>=8.1",             # for the CLI, printing colors, decorator-based - may allow extensions to CLI
-    "decorator",              # less pain in writing correct decorators. very mature and stable, so worth keeping in core
-    "kompress>=0.2.20240918", # for transparent access to compressed files via pathlib.Path
-    "more-itertools",         # it's just too useful and very common anyway
-    "pytz",                   # even though it's not needed by the core, it"s so common anyway...
+    "appdirs",           # very common, and makes it portable
+    "click>=8",          # for the CLI, printing colors, decorator-based - may allow extensions to CLI
+    "decorator",         # less pain in writing correct decorators. very mature and stable, so worth keeping in core
+    "kompress>=0.2",     # for transparent access to compressed files via pathlib.Path
+    "more-itertools",    # it's just too useful and very common anyway
+    "pytz",              # even though it's not needed by the core, it"s so common anyway...
     "setuptools_scm",
     "setuptools>=42",
-    "typing-extensions",      # one of the most common pypi packages, ok to depend for core
+    "typing-extensions", # one of the most common pypi packages, ok to depend for core
     "wheel",
     "orgparse",
 ]
@@ -110,17 +110,15 @@ pushshift-comment-export = { git = "https://github.com/purarue/pushshift_comment
 
 [dependency-groups]
 dev = [
-    "argparse>=1.4.0",
-    "build>=1.2.2.post1",
-    "cachew>=0.18.20241020",
-    "colorlog>=6.9.0",
-    "enlighten>=1.13.0",
+    "argparse>=1.4",
+    "build>=1.2",
+    "colorlog>=6.9",
+    "enlighten>=1.13",
     "hypexport",
     "isort>=5.13.2",
     "lxml>=5.3.0",
     "lxml-stubs>=0.5.1",
     "mypy>=1.14.1",
-    "orjson>=3.10.13",
     "pandas>=2.2",
     "pandas-stubs>=2.2",
     "pyfzf-iter>=0.0.1",
@@ -129,8 +127,8 @@ dev = [
     "ruff>=0.8.6",
     "setuptools>=75.7.0",
     "simplejson>=3.19.3",
-    "tox>=4.23.2",
-    "tox-uv>=1.17.0",
+    "tox>=4.23",
+    "tox-uv>=1.17",
     "types-beautifulsoup4>=4.12.0.20241020",
     "types-colorama>=0.4.15.20240311",
     "types-dateparser>=1.2.0.20240420",
@@ -142,7 +140,7 @@ dev = [
     "types-python-dateutil>=2.9.0.20241206",
     "types-pytz>=2024.2.0.20241221",
     "types-simplejson>=3.19.0.20241221",
-    "wheel>=0.45.1",
+    "wheel>=0.45",
 ]
 [project.optional-dependencies]
 testing = [
@@ -162,7 +160,7 @@ testing = [
 optional = [
     "orjson",                # for my.core.serialize
     "pyfzf_iter",            # for my.core.denylist
-    "cachew>=0.15.20231019",
+    "cachew>=0.18",
     "mypy",                  # used for config checks
     "colorlog",              # for colored logs
     "enlighten",             # for CLI progress bars
