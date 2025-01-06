@@ -65,7 +65,7 @@ def run() -> None:
         check_call(f'{python} -m pip install        git+https://github.com/karlicoss/hypexport.git'.split())
     else:
         try:
-            import hypexport  # pylint: disable=unused-import,import-outside-toplevel
+            import hypexport  # type: ignore  # pylint: disable=unused-import,import-outside-toplevel
         except ModuleNotFoundError:
             check_call(f'{python} -m pip --user git+https://github.com/karlicoss/hypexport.git'.split())
 
@@ -122,14 +122,17 @@ def named_temp_dir(name: str):
     try:
         td.mkdir()
         yield td
+    except OSError as e:
+        print(f"Failed to create {unique_temp_dir}: {e}")
     finally:
         try:
             rmtree(str(unique_temp_dir), ignore_errors=True)
-        except Exception as e:
+        except OSError as e:
             print(f"Failed to cleanup {unique_temp_dir}: {e}")
 
 
 def main():
+    """Create a temporary directory and run the demo."""
     with named_temp_dir('my_demo') as tdir:
         os.chdir(tdir)
         run()
