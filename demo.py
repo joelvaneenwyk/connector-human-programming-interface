@@ -60,15 +60,11 @@ def run() -> None:
     )
 
     # 2. prepare repositories you'd be using. For this demo we only set up Hypothesis
-    tox = 'TOX' in os.environ
-    if tox: # tox doesn't like --user flag
-        check_call(f'{python} -m pip install        git+https://github.com/karlicoss/hypexport.git'.split())
-    else:
-        try:
-            import hypexport  # type: ignore  # pylint: disable=unused-import,import-outside-toplevel
-        except ModuleNotFoundError:
-            check_call(f'{python} -m pip --user git+https://github.com/karlicoss/hypexport.git'.split())
-
+    try:
+        import hypexport  # type: ignore  # pylint: disable=unused-import,import-outside-toplevel
+    except ModuleNotFoundError:
+        # tox doesn't like --user flag
+        check_call(f'{python} -m pip {"" if 'TOX' in os.environ else "--user"} git+https://github.com/karlicoss/hypexport.git'.split())
 
     # 3. prepare some demo Hypothesis data
     hypothesis_backups = Path('backups/hypothesis').resolve()
